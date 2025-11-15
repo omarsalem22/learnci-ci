@@ -10,3 +10,9 @@ jobs:
     steps:
       - name: print welcome
         run: echo "welcome to first workflow!"
+        
+      - name: Checkout repo  
+           uses:actions/checkout@v6-beta
+        
+      - name: List repositories  
+        run: ls -la
