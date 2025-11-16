@@ -3,5 +3,5 @@ function greet(name) {
   return `Hello , ${name}`;
 }
 
-// Node.js CommonJS export
+// Node.js CommoJS 
 module.exports = greet;
