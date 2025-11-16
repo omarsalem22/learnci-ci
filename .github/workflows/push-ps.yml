@@ -1,25 +1,27 @@
 name: onpush
+
 on:
-    push:
-        branches:
-            - "release/**"
-            - main
+  push:
+    branches:
+      - main
+      - "release/**"
+    paths:
+      - "src/**"
 
-        paths: 
-            - "src/**"    
-    
-    
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4   # v4 is stable; v6-beta does not exist yet
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'        
 
-jobs:            
-    test: 
-        runs-on: ubuntu-latest
-        steps: 
-            - name: checkout code
-              uses: actions/checkout@v6-beta
+      - name: Install dependencies (none needed, but keeps npm cache)
+        run: npm ci   
 
-            - name: run test 
-              run:   npm test
-                  
-
-
+      - name: Run tests
+        run: npm test
