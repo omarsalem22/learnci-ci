@@ -13,15 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4   # v4 is stable; v6-beta does not exist yet
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'        
-
-      - name: Install dependencies (none needed, but keeps npm cache)
-        run: npm ci   
+        uses: actions/checkout@v4   
 
       - name: Run tests
         run: npm test
