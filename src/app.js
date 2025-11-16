@@ -1,12 +1,7 @@
-/**
- * Greets a person.
- * @param {string} name
- * @returns {string}
- */
-function greet(name) {
-  return `Hello , ${name}`;
+
+function greet(name = '') {
+  const n = String(name).trim();
+  return n ? `Hello, ${n}` : 'Hello';
 }
 
-// Node.js CommonJS export
-//omar
 module.exports = greet;
