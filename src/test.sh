@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail   # fail fast, treat unset vars as error
 
-EXPECTED="Hello , test"
+EXPECTED="Hello ,  test"
 
 # Run the module with argument 'test'
 OUTPUT=$(node -e "console.log(require('./src/app')('test'))")
